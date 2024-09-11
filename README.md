@@ -3,6 +3,7 @@
 Simple KDE Plasma ```Command Set``` widget based from Zren's "Output Command" that displays:
 - CPU Usage
 - RAM Usage
+- Disk Usage
 - Storage Usage
 - CPU Temperature
 
@@ -58,7 +59,7 @@ $ sudo cp ./Fonts/* /usr/share/fonts/TTF/
 
 ## Setting Up
 ### Initial Set-up
-CPU, RAM, Storage, and Temperature must be attached separately. This means you can use each of these widgets according to your needs and attach them anywhere you like.
+CPU, RAM, Disk, Storage, and Temperature must be attached separately. This means you can use each of these widgets according to your needs and attach them anywhere you like.
 
 <br>
 
