@@ -1,6 +1,6 @@
 # Resource-Viewer-Plasma-Widget
 ## About
-Simple KDE Plasma ```Command Set``` widget based from Zren's "Output Command" that displays:
+Simple KDE Plasma ```Command Set``` widget based from Zren's "Command Output" that displays:
 - CPU Usage
 - RAM Usage
 - Disk Usage
@@ -12,7 +12,7 @@ This widget can be attached on the Desktop or the Panel.
 <br>
 
 ## Requirements
-- "Output Command" Widget
+- "Command Output" Widget
 - Monospace Nerd Fonts
 
 <br>
@@ -64,5 +64,5 @@ CPU, RAM, Disk, Storage, and Temperature must be attached separately. This means
 <br>
 
 # Credits
-- Chris Holland - [Zren](https://github.com/Zren) (Output Command Plasma Widget)
+- Chris Holland - [Zren](https://github.com/Zren) (Command Output Plasma Widget)
 - Ryan L McIntyre - [ryanoasis](https://github.com/ryanoasis) (Nerd Fonts)
