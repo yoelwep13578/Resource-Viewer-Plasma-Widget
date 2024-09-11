@@ -14,6 +14,10 @@ This widget can be attached on the Desktop or the Panel.
 ## Requirements
 - "Command Output" Widget
 - Monospace Nerd Fonts
+- Utility Linux Programs
+  - ```top``` to view CPU Usage
+  - ```sysstat``` --> ```iostat``` to view Disk Usage
+  - ```df``` to view Storage Usage
 
 <br>
 
