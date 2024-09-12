@@ -18,6 +18,7 @@ This widget can be attached on the Desktop or the Panel.
   - ```top``` to view CPU Usage
   - ```sysstat``` --> ```iostat``` to view Disk Usage
   - ```df``` to view Storage Usage
+  - ```lm-sensors``` --> ```sensors``` to view Temperature
 
 <br>
 
@@ -38,7 +39,7 @@ $ mv ./Scripts /home/yourname/
 Since this is based on the Output Command, it needs to be installed first. Install it using one of the methods below:
 - [Pling](https://www.pling.com/p/2136636/)
 - [Github](https://github.com/Zren/plasma-applet-commandoutput)
-- Or you can install it automatically with Right Click Desktop --> Enter Edit Mode --> Add Widgets --> Get New Widgets --> Download New Plasma Widgets and search with "Output Command" keyword.
+- Or you can install it automatically with Right Click Desktop --> Enter Edit Mode --> Add Widgets --> Get New Widgets --> Download New Plasma Widgets and search with "Command Output" keyword.
 ![image](https://github.com/user-attachments/assets/815ae5d9-5844-4214-9ba2-27c0b8ac3d2c)
 
 ### 4. Install Nerd Font
