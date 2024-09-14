@@ -258,10 +258,129 @@ textmode_title="RAM: "  # Title in Text Mode
 
 Configure it with your preference & creativity, or here's another example you can create:
 
-![Example 3](https://github.com/user-attachments/assets/d5217ba7-7d78-4ed7-9c79-61623422f426)
-![Example 2](https://github.com/user-attachments/assets/62abb248-f86d-4ad8-b696-25f6447c7770)
 ![Example 1](https://github.com/user-attachments/assets/60f27734-0806-4c7a-acb5-0ab534352917)
+![Example 2](https://github.com/user-attachments/assets/62abb248-f86d-4ad8-b696-25f6447c7770)
+![Example 3](https://github.com/user-attachments/assets/d5217ba7-7d78-4ed7-9c79-61623422f426)
 
+<br>
+
+### Configure ```.../Scripts/Disk Usage/Disk-Usage.sh```
+![Properties](https://github.com/user-attachments/assets/56084b5a-360d-49af-a477-f7ef716dfb9e)
+
+The available config looks something like this:
+```
+#===================
+#  EDITABLE ZONE
+#===================
+
+# Edit config here
+
+mode="1"                  # [1] Icon Mode
+                          # [2] Inline Text Mode
+                          # [3] Breakline Text Mode
+
+textmode_title="Disk: "   # Title for text mode
+
+target="/dev/sda"         # Target disk, default is /dev/sda
+```
+
+Configure it with your preference & creativity. Here's example that you can try:
+
+![Example Creativity](https://github.com/user-attachments/assets/0cfeb280-cbd9-4b6b-bef3-de90697ec301)
+
+<br>
+
+### Configure ```.../Scripts/Storage Usage/Storage-Usage.sh```
+![Properties](https://github.com/user-attachments/assets/8a06c931-1fe0-4d30-9df4-80406fb954ba)
+
+The available config looks something like this:
+```
+#===================
+#  EDITABLE ZONE
+#===================
+
+# Edit config here
+
+mode="1"                # [1] Icon Mode
+                        # [2] Inline Text Mode
+                        # [3] Breakline Text Mode
+
+unit="1"                # [1] GB
+                        # [2] GiB
+
+show_as="1"             # [1] Percent
+                        # [2] Percent + Size
+                        # [3] Percent + Capacity
+                        # [4] Size
+                        # [5] Size + Capacity
+
+separator="|"           # Fill in with the separator of your choice
+
+textmode_title="Storage: "  # Title in Text Mode
+
+target="overall"        # Target to all mounted partitions --> use "overall"
+                        # Target to disk --> write like "/dev/sda"
+                        # Target to partition -> write like "/dev/sda5"
+
+dynamic_conversion="1"  # [1] Enable dynamic conversion (KB/MiB/GB/TiB)
+                        # [0] Disable dynamic conversion, stick to GB/GiB
+```
+
+Configure it with your preference & creativity. And here's another example you can create:
+
+![Example 1](https://github.com/user-attachments/assets/86834c75-990a-42fa-872f-e663f243a420)
+![Example 2](https://github.com/user-attachments/assets/c61a1604-6765-46dc-a9f9-8c5077ac2da1)
+![Example 3](https://github.com/user-attachments/assets/39eb0182-1c36-405c-8e59-c9fa1ea3abb6)
+
+<br>
+
+### Configure ```../Scripts/Temperature/Temperature.sh```
+![Properties](https://github.com/user-attachments/assets/81978d60-c761-4978-90f6-f341947cb180)
+
+The available config looks something like this:
+```
+#===================
+#  EDITABLE ZONE
+#===================
+
+# Edit config here
+mode="1"                    # [1] Icon Mode
+                            # [2] Inline Text Mode
+                            # [3] Breakline Text Mode
+
+unit="C"                    # "C" for Celsius
+                            # "F" for Fahrenheit
+
+show_as="1"                 # [1] Temp
+                            # [2] Temp + Detail
+
+separator="|"               # Fill in with the separator of your choice
+
+textmode_title="Temp: "     # Title in Text Mode
+
+target="allCPU"             # "allCPU" for CPU Package 0
+                            # "overall" for acpitz-acpi-0
+                            # Write number for specific core (e.g. "0" for core 0)
+
+# Limit & Details. Fill with:
+# [Limit in Celsius], [Limit in Fahrenheit], [Detail text]
+
+level1_limit=(40 104 "Idle")
+level2_limit=(50 122 "Normal")
+level3_limit=(72 162 "Warm")
+level4_limit=(85 185 "Hot")
+```
+
+Configure it with your preference & creativity. Here's another example you can try:
+
+![Example](https://github.com/user-attachments/assets/8fcf7520-3851-4ce3-b1b3-890e4dd651b1)
+
+<br>
+
+## Bonus: Screenshot of using it on Panel
+![image](https://github.com/user-attachments/assets/b250dc04-48c4-42d6-84a4-2678499f5250)
+
+<br>
 
 # Credits
 - Chris Holland - [Zren](https://github.com/Zren) (Command Output Plasma Widget)
