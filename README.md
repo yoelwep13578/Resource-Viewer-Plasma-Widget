@@ -1,4 +1,4 @@
-# Resource-Viewer-Plasma-Widget
+# Resource Viewer Plasma Widget -- Command Sets for Zren's Plasma Applet CommandOutput
 ![SRV Intro](https://github.com/user-attachments/assets/367ecbfd-727a-4ed7-bda9-bb0f9b5adc1a)
 
 ## About
