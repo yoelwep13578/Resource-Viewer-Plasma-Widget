@@ -20,7 +20,7 @@ This widget can be attached on the Desktop or the Panel.
 
 ## Requirements
 - "Command Output" Widget
-- Monospace Nerd Fonts
+- Have Nerd Fonts Installed (for icons)
 - Utility Linux Programs
   - ```top``` to view CPU Usage
   - ```sysstat``` --> ```iostat``` to view Disk Usage
@@ -50,8 +50,8 @@ Since this is based on the Output Command, it needs to be installed first. Insta
 - Or you can install it automatically with Right Click Desktop --> Enter Edit Mode --> Add Widgets --> Get New Widgets --> Download New Plasma Widgets and search with "Command Output" keyword.
 ![image](https://github.com/user-attachments/assets/815ae5d9-5844-4214-9ba2-27c0b8ac3d2c)
 
-### 4. Install Nerd Font
-Nerd Font is a font with additional icon sets. It needs to be installed for some icons to render correctly. You can download & choose it from [Nerd Font](https://www.nerdfonts.com/font-downloads) with your preference.
+### 4. Install Nerd Font (Just for Nerd-Based Icons)
+Nerd Font is a font with additional icon sets, like in this [Nerd Fonts Cheat Sheet](https://www.nerdfonts.com/cheat-sheet). It needs to be installed for some icons to render correctly. You can download & choose it from [Nerd Font](https://www.nerdfonts.com/font-downloads) with your preference.
 
 If you confused, you can use these example:
 - [Hack](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip)
@@ -64,7 +64,7 @@ Then, install (move) using this command:
 $ sudo mv /home/yourname/Desktop/*.ttf /usr/share/fonts/TTF/
 ```
 
-> Sometimes, system need to be restarted to refresh any changes
+> Sometimes, you need to run `fc-cache`, logout, or restarting system to refresh any changes
 
 <br>
 
@@ -161,12 +161,19 @@ You only need to focus on the ```Scripts``` folder and its contents. The command
 - F --> Temperature in Fahrenheit
 
 #### Separator --> The separator between value 1 and value 2
-- The separator can be any character you want. By default, the separator is "|". You can adjust it to your creativity!
+- The separator can be any character you want. By default, the separator is " | ". You can adjust it to your creativity!
 > The separator will not be displayed if "Show As" uses a single value (does not include a second value).
 
 #### TextMode Title --> Text displayed in Inline or Breakline Text Mode
-- By default, the title usually contains text that identifies itself, followed by ":" and a space. For example, `CPU: `, `RAM: `, `Temp: `, etc. You can change it to whatever you like!
+- By default, the title usually contains text that identifies itself, followed by ":". For example, `CPU:`, `RAM:`, `Temp:`, etc. You can change it to whatever you like!
 > TextMode Title will not appear in Icon Mode.
+
+#### Icon --> Symbol used in Icon Mode
+- By default, the icon uses hex code of Nerd Font Icons. You can change it with other Nerd Font Icons (as hex or exact character), emoji, unicode symbol, etc.
+> Icon will not appear in Text Mode.
+
+#### Spacing --> Spaces between Icon/Title and Output Text
+- Default value is `1`. You can change it with integer numbers.
 
 #### Dynamic Conversion --> Conversion to a larger/smaller unit
 - Enabled: This will convert size values to KB, MB, GB, TB or KiB, MiB, GiB, TiB depending on the condition.
@@ -180,6 +187,8 @@ You only need to focus on the ```Scripts``` folder and its contents. The command
 - Overall: Calculates total storage usage and capacity across mounted partitions and disks.
 - Can be set to a disk such as `/dev/sda`, to get the usage and capacity for that disk.
 - Can be set to a partition such as `/dev/sda9`, to get the usage and capacity for that partition.
+> [!NOTE]
+> Since this data retrieved using fd, this only works with mounted partitions
 
 ##### CPU
 - All CPU: Fetches the average usage of all cores.
@@ -212,12 +221,15 @@ show_as="1"                # [1] Percent
                            # [2] Percent + Current Speed
                            # [3] Current Speed
 
-separator="|"              # Fill in with the separator of your choice
+separator=" | "            # Fill in with the separator of your choice
 
-textmode_title="CPU: "     # Title in Text Mode
+textmode_title="CPU:"      # Title in Text Mode
+icon="\uf4bc"              # Icon in Icon Mode (Nerd Font Icon Code, Exact Nerd Font Icon, Emoji, etc)
+
+spacing="1"                # Spacing between Icon/Title and Output
 
 target="overall"           # "overall" for all cores, or specific core (e.g. "1" for core 1)
-                           # Remember: core always start from 0, not from 1.
+                           # Core number start from 0
 ```
 
 Configure it with your preference & creativity, or here’s another example you can create:
@@ -233,7 +245,7 @@ Configure it with your preference & creativity, or here’s another example you 
 The available config looks something like this:
 ```
 #===================
-#  EDITABLE AREA
+#  EDITABLE ZONE
 #===================
 
 # Edit Config Here
@@ -251,9 +263,12 @@ show_as="2"             # [1] Percent
                         # [4] Size
                         # [5] Size + Capacity
 
-separator="|"           # Fill in with the separator of your choice
+separator=" | "         # Fill in with the separator of your choice
 
-textmode_title="RAM: "  # Title in Text Mode
+textmode_title="RAM:"   # Title in Text Mode
+icon="\xEE\xBF\x85"     # Icon in Icon Mode (Nerd Font Icon Code, Exact Nerd Font Icon, Emoji, etc)
+
+spacing="1"             # Spacing between Icon/Title and Output
 ```
 
 Configure it with your preference & creativity, or here's another example you can create:
@@ -280,6 +295,11 @@ mode="1"                  # [1] Icon Mode
                           # [3] Breakline Text Mode
 
 textmode_title="Disk: "   # Title for text mode
+
+icon_idle="\uE271"        # Icon for <= threshold (Nerd Font Icon Code, Exact Nerd Font Icon, Emoji, etc)
+icon_active="\uEDE9"      # Icon for > threshold  (Nerd Font Icon Code, Exact Nerd Font Icon, Emoji, etc)
+
+spacing="1"               # Spacing between Icon/Title and Output
 
 target="/dev/sda"         # Target disk, default is /dev/sda
 ```
@@ -314,9 +334,12 @@ show_as="1"             # [1] Percent
                         # [4] Size
                         # [5] Size + Capacity
 
-separator="|"           # Fill in with the separator of your choice
+separator=" | "         # Fill in with the separator of your choice
 
-textmode_title="Storage: "  # Title in Text Mode
+textmode_title="Storage:"  # Title in Text Mode
+icon="\uf1c0"           # Icon in Icon Mode (Nerd Font Icon Code, Exact Nerd Font Icon, Emoji, etc)
+
+spacing="1"             # Spacing between Icon/Title and Output
 
 target="overall"        # Target to all mounted partitions --> use "overall"
                         # Target to disk --> write like "/dev/sda"
@@ -354,9 +377,18 @@ unit="C"                    # "C" for Celsius
 show_as="1"                 # [1] Temp
                             # [2] Temp + Detail
 
-separator="|"               # Fill in with the separator of your choice
+separator=" | "             # Fill in with the separator of your choice
 
-textmode_title="Temp: "     # Title in Text Mode
+textmode_title="Temp:"      # Title in Text Mode
+
+# Icons for each level (Nerd Font Icon Code, Exact Nerd Font Icon, Emoji, etc)
+icon_lvl1="\uf2cb"          # Cold / Idle
+icon_lvl2="\uf2ca"          # Normal
+icon_lvl3="\uf2c9"          # Warm
+icon_lvl4="\uf2c7"          # Hot
+icon_default="\uf2cb"       # Default < level1
+
+spacing="1"                 # Spacing between Icon/Title and Output
 
 target="allCPU"             # "allCPU" for CPU Package 0
                             # "overall" for acpitz-acpi-0
@@ -364,6 +396,10 @@ target="allCPU"             # "allCPU" for CPU Package 0
 
 # Limit & Details. Fill with:
 # [Limit in Celsius], [Limit in Fahrenheit], [Detail text]
+#
+# Example:  level1_limit=(40 104 "Chill")
+#   Celcius───────────────┘   │    └─────────Detail Text
+#                        Fahrenheit
 
 level1_limit=(40 104 "Idle")
 level2_limit=(50 122 "Normal")
